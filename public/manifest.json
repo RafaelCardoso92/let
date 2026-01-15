@@ -1,0 +1,20 @@
+{
+  "name": "Let'Rent - Aluguer de Material para Eventos",
+  "short_name": "Let'Rent",
+  "description": "Aluguer premium de material para eventos em Portugal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5B9A8B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "lifestyle"],
+  "lang": "pt-PT"
+}

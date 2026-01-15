@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ QUOTES ============
+
+model QuoteRequest {
+  id            String   @id @default(cuid())
+  status        String   @default("pending") // pending, quoted, approved, confirmed, completed, cancelled
+
+  // Customer info
+  customerName  String
+  customerEmail String
+  customerPhone String
+
+  // Event details
+  eventDate     DateTime
+  eventEndDate  DateTime?
+  eventLocation String
+  eventType     String?
+  guestCount    Int?
+  notes         String?
+
+  // Pricing (set by team)
+  estimatedTotal  Float?
+  finalTotal      Float?
+  depositAmount   Float?
+  depositPaid     Boolean @default(false)
+
+  // Payment
+  paymentMethod   String?
+  paymentRef      String?
+
+  // Admin notes
+  adminNotes    String?
+
+  // Timestamps
+  quotedAt      DateTime?
+  confirmedAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  items         QuoteItem[]
+
+  @@index([status])
+  @@index([eventDate])
+  @@index([createdAt])
+}
+
+model QuoteItem {
+  id            String   @id @default(cuid())
+  quoteId       String
+  quote         QuoteRequest @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+
+  productId     String
+  productName   String
+  category      String?
+  quantity      Int
+  unitPrice     Float?
+  totalPrice    Float?
+
+  @@index([quoteId])
+}
+
+model Admin {
+  id            String   @id @default(cuid())
+  username      String   @unique
+  passwordHash  String
+  createdAt     DateTime @default(now())
+}
+
+// ============ INSPIRATION GALLERY ============
+
+model InspirationPost {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  eventType   String   // wedding, corporate, birthday, baptism, communion, party
+  style       String?  // rustic, modern, classic, bohemian, minimalist
+  colorScheme String?  // gold, green, blush, navy, white, mixed
+  images      InspirationImage[]
+  products    InspirationProduct[]
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  eventDate   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([eventType])
+  @@index([featured])
+  @@index([published])
+}
+
+model InspirationImage {
+  id        String   @id @default(cuid())
+  postId    String
+  post      InspirationPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String?
+  order     Int      @default(0)
+
+  @@index([postId])
+}
+
+model InspirationProduct {
+  id          String   @id @default(cuid())
+  postId      String
+  post        InspirationPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  productId   String   // Sanity product ID
+  productName String
+  quantity    Int?     // Suggested quantity
+
+  @@index([postId])
+}
+
+// ============ STOCK & AVAILABILITY ============
+
+model ProductStock {
+  id          String   @id @default(cuid())
+  productId   String   @unique // Sanity product ID
+  productName String
+  totalStock  Int      // Total inventory count
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reservations StockReservation[]
+}
+
+model StockReservation {
+  id          String   @id @default(cuid())
+  stockId     String
+  stock       ProductStock @relation(fields: [stockId], references: [id], onDelete: Cascade)
+  quoteId     String?  // Link to confirmed quote
+  quantity    Int
+  startDate   DateTime
+  endDate     DateTime
+  status      String   @default("reserved") // reserved, released
+  createdAt   DateTime @default(now())
+
+  @@index([stockId])
+  @@index([startDate, endDate])
+  @@index([quoteId])
+}
