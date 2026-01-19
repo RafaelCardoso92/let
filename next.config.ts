@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "let-rent.pt",
+      },
+      {
+        protocol: "https",
+        hostname: "www.let-rent.pt",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
       },
     ],
