@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { FeaturedSlider } from "@/components/sections/featured-slider";
-import { ProductCarousel } from "@/components/sections/product-carousel";
 import { CTASection } from "@/components/sections/cta-section";
 
 export default function Home() {
@@ -18,8 +17,6 @@ export default function Home() {
       <FeaturedSlider />
 
       <ServicesGrid />
-
-      <ProductCarousel />
 
       <CTASection />
     </>
