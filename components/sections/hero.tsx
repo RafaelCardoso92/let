@@ -67,7 +67,7 @@ export function Hero({ title, subtitle, ctaText, ctaHref, backgroundImage }: Her
               <Button
                 size="lg"
                 asChild
-                className="group bg-primary hover:bg-primary/90 text-white font-semibold text-lg px-12 py-8 rounded-full shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300"
+                className="group bg-primary hover:bg-primary/90 text-white font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 rounded-full shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300"
               >
                 <Link href={ctaHref}>
                   <span className="tracking-wide">{ctaText}</span>

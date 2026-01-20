@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/servicos", label: "Serviços" },
-  { href: "/orcamento", label: "Orçamento" },
   { href: "/contactos", label: "Contactos" },
 ];
 
@@ -89,12 +88,7 @@ export function Navigation() {
               </a>
             </div>
             
-            <Button 
-              asChild 
-              className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300 rounded-full px-6"
-            >
-              <Link href="/orcamento">Pedir Orçamento</Link>
-            </Button>
+
           </div>
 
           {/* Mobile menu button */}
@@ -133,9 +127,7 @@ export function Navigation() {
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>
-              <Button asChild className="bg-primary hover:bg-primary/90 rounded-full">
-                <Link href="/orcamento" onClick={() => setIsOpen(false)}>Pedir Orçamento</Link>
-              </Button>
+
             </div>
           </div>
         )}

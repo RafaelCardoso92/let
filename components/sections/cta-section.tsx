@@ -59,7 +59,7 @@ export function CTASection() {
             <Button
               size="lg"
               asChild
-              className="group relative overflow-hidden bg-white text-primary hover:bg-white/95 font-semibold text-lg px-12 py-8 rounded-full shadow-2xl hover:shadow-white/30 hover:scale-105 transition-all duration-500"
+              className="group relative overflow-hidden bg-white text-primary hover:bg-white/95 font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 rounded-full shadow-2xl hover:shadow-white/30 hover:scale-105 transition-all duration-500"
               onClick={fireConfetti}
             >
               <Link href="/contactos" onClick={fireConfetti}>
@@ -73,7 +73,7 @@ export function CTASection() {
               size="lg"
               variant="outline"
               asChild
-              className="group relative overflow-hidden border-2 border-accent/50 bg-accent/10 text-white hover:bg-accent hover:text-black hover:border-accent transition-all duration-500 px-12 py-8 rounded-full text-lg font-semibold backdrop-blur-sm hover:scale-105"
+              className="group relative overflow-hidden border-2 border-accent/50 bg-accent/10 text-white hover:bg-accent hover:text-black hover:border-accent transition-all duration-500 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 rounded-full text-sm sm:text-base md:text-lg font-semibold backdrop-blur-sm hover:scale-105"
             >
               <a href="/catalogo-2025-2026.pdf" download>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
