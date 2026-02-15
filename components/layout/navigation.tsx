@@ -35,8 +35,8 @@ export function Navigation() {
             <Image
               src="/images/logos/logo.png"
               alt="Let'Rent"
-              width={160}
-              height={53}
+              width={100}
+              height={100}
               className={"transition-all duration-500 group-hover:scale-105 " +
                 (isScrolled ? "h-14 md:h-16" : "h-16 md:h-20") + " w-auto"
               }

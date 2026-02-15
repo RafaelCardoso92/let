@@ -17,38 +17,52 @@ interface FeaturedProduct {
 const featuredProducts: FeaturedProduct[] = [
   {
     id: 1,
-    name: "Serviço de Mesa Clássico",
-    description: "Elegância atemporal para eventos sofisticados. Inclui pratos marcadores dourados, talheres de prata e cristalaria fina.",
-    image: "/images/products-hd/prato-marcador-gold.jpg",
-    category: "Mesa",
+    name: "Mesa Rústica",
+    description: "Mesas de madeira rústica que combinam charme tradicional com elegância contemporânea.",
+    image: "/images/products-hd/mesa-rustica.webp",
+    category: "Mobiliário",
   },
   {
     id: 2,
-    name: "Cadeiras de Design",
-    description: "Cadeiras Tiffany e Paris que transformam qualquer espaço num ambiente de requinte incomparável.",
-    image: "/images/products-hd/cadeira-tiffany.jpg",
+    name: "Mesa Alta Cocktail",
+    description: "Ideal para zonas de receção, convívio e cocktails com um ambiente sofisticado.",
+    image: "/images/products-hd/mesa-alta-cocktail.jpg",
     category: "Mobiliário",
   },
   {
     id: 3,
-    name: "Cristalaria Premium",
-    description: "Copos de cristal com design exclusivo que elevam a experiência gastronómica do seu evento.",
-    image: "/images/products-hd/copos-bicos.jpg",
-    category: "Cristalaria",
+    name: "Cadeira Tiffany Decapé",
+    description: "Em madeira clara, traz elegância e um estilo atemporal para qualquer evento.",
+    image: "/images/products-hd/cadeira-tiffany-decape.webp",
+    category: "Mobiliário",
   },
   {
     id: 4,
-    name: "Lounge Elegante",
-    description: "Sofás e puffs de alta qualidade para criar áreas de descanso verdadeiramente sofisticadas.",
-    image: "/images/products-hd/sofa-branco.jpg",
-    category: "Lounge",
+    name: "Prato Marcador Dourado",
+    description: "Eleva qualquer serviço de mesa para a excelência com o requinte do dourado.",
+    image: "/images/products-hd/prato-marcador-dourado.jpg",
+    category: "Mesa",
   },
   {
     id: 5,
-    name: "Mesas Rústicas",
-    description: "Mesas de madeira rústica que combinam charme tradicional com elegância contemporânea.",
-    image: "/images/products-hd/mesa-rustica.png",
-    category: "Mobiliário",
+    name: "Prato Marcador Ratan",
+    description: "Um marcador que traz textura, charme e um toque acolhedor à decoração da mesa.",
+    image: "/images/products-hd/prato-marcador-ratan.jpg",
+    category: "Mesa",
+  },
+  {
+    id: 6,
+    name: "Copos Bico",
+    description: "Em vidro texturizado e tons variados, acrescentam personalidade e um toque distintivo à mesa.",
+    image: "/images/products-hd/copos-bico.jpg",
+    category: "Cristalaria",
+  },
+  {
+    id: 7,
+    name: "Bancada Refrigerada Bar",
+    description: "Garantindo frescura e praticidade em qualquer evento.",
+    image: "/images/products-hd/bancada-refrigerada-bar.jpg",
+    category: "Bar",
   },
 ];
 
@@ -123,6 +137,7 @@ export function FeaturedSlider() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
+                    quality={85}
                   />
                   
                   {/* Vignette */}
