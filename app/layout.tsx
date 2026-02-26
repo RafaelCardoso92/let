@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://let.rafaelcardoso.co.uk"),
+  metadataBase: new URL("https://let-rent.pt"),
   title: {
     default: "Let'Rent - Aluguer Premium de Material para Eventos | Portugal",
     template: "%s | Let'Rent",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "festas empresariais",
     "aluguer lounge eventos",
   ],
-  authors: [{ name: "Let'Rent", url: "https://let.rafaelcardoso.co.uk" }],
+  authors: [{ name: "Let'Rent", url: "https://let-rent.pt" }],
   creator: "Let'Rent",
   publisher: "Let'Rent",
   formatDetection: {
@@ -68,15 +68,15 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://let.rafaelcardoso.co.uk",
+    canonical: "https://let-rent.pt",
     languages: {
-      "pt-PT": "https://let.rafaelcardoso.co.uk",
+      "pt-PT": "https://let-rent.pt",
     },
   },
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    url: "https://let.rafaelcardoso.co.uk",
+    url: "https://let-rent.pt",
     siteName: "Let'Rent",
     title: "Let'Rent - Aluguer Premium de Material para Eventos",
     description:

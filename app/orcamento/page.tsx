@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Pedir Orçamento | Let'Rent",
   description: "Peça um orçamento personalizado para o aluguer de material para o seu evento. Selecione os produtos, indique a data e local, e receba uma proposta detalhada.",
   alternates: {
-    canonical: "https://let.rafaelcardoso.co.uk/orcamento",
+    canonical: "https://let-rent.pt/orcamento",
   },
 };
 

@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "serviços eventos completos",
   ],
   alternates: {
-    canonical: "https://let.rafaelcardoso.co.uk/servicos",
+    canonical: "https://let-rent.pt/servicos",
   },
   openGraph: {
     title: "Serviços de Aluguer para Eventos | Let'Rent",
     description:
       "Aluguer premium, transporte dedicado e montagem profissional. Soluções completas para eventos em Portugal.",
-    url: "https://let.rafaelcardoso.co.uk/servicos",
+    url: "https://let-rent.pt/servicos",
     images: [
       {
         url: "/images/hero/hero-1.jpg",

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://let.rafaelcardoso.co.uk/contactos",
+    canonical: "https://let-rent.pt/contactos",
   },
   keywords: [
     "contacto let rent",

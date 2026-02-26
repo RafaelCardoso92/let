@@ -1,5 +1,5 @@
 export function StructuredData() {
-  const baseUrl = "https://let.rafaelcardoso.co.uk";
+  const baseUrl = "https://let-rent.pt";
   
   const structuredData = {
     "@context": "https://schema.org",

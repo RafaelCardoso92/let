@@ -1,5 +1,5 @@
 # Let'Rent - Aluguer de Material para Eventos
-# https://let.rafaelcardoso.co.uk
+# https://let-rent.pt
 
 User-agent: *
 Allow: /
@@ -9,7 +9,7 @@ Disallow: /studio
 Disallow: /api
 
 # Sitemap
-Sitemap: https://let.rafaelcardoso.co.uk/sitemap.xml
+Sitemap: https://let-rent.pt/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
