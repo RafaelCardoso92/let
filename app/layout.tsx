@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s | Let'Rent",
   },
   description:
-    "Aluguer premium de material para eventos em Portugal. Equipamentos de catering de luxo, mobiliário elegante, cristalaria fina. Transporte e montagem profissional incluídos. Transforme o seu evento numa experiência inesquecível.",
+    "Aluguer premium de material para eventos em Portugal. Catering, mobiliário e cristalaria de luxo. Transporte incluído.",
   keywords: [
     "aluguer material eventos",
     "aluguer material eventos portugal",

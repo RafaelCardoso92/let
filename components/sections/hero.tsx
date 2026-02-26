@@ -9,9 +9,10 @@ interface HeroProps {
   ctaText?: string;
   ctaHref?: string;
   backgroundImage?: string;
+  backgroundAlt?: string;
 }
 
-export function Hero({ title, subtitle, ctaText, ctaHref, backgroundImage }: HeroProps) {
+export function Hero({ title, subtitle, ctaText, ctaHref, backgroundImage, backgroundAlt }: HeroProps) {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Background Image - CSS-only parallax */}
@@ -20,7 +21,7 @@ export function Hero({ title, subtitle, ctaText, ctaHref, backgroundImage }: Her
           <div className="absolute inset-0 z-0">
             <Image
               src={backgroundImage}
-              alt=""
+              alt={backgroundAlt || title}
               fill
               className="object-cover"
               sizes="100vw"

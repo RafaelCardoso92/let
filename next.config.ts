@@ -55,6 +55,23 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // Redirects for www canonicalization
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.let-rent.pt",
+          },
+        ],
+        destination: "https://let-rent.pt/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for caching and security
   async headers() {
     return [
