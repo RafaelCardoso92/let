@@ -12,7 +12,7 @@ export default function Home() {
         subtitle="Oferecemos uma ampla variedade de equipamentos de catering, mobiliário e serviços completos para tornar o seu evento inesquecível."
         ctaText="Descubra os nossos serviços"
         ctaHref="/servicos"
-        backgroundImage="/images/hero/hero-2.jpg"
+        backgroundImage="/images/hero/hero-2-optimized.webp"
       />
 
       <NewArrivalSpotlight />

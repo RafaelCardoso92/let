@@ -26,7 +26,9 @@ export function Hero({ title, subtitle, ctaText, ctaHref, backgroundImage, backg
               className="object-cover"
               sizes="100vw"
               priority
-              quality={85}
+              quality={75}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAAAAAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAKAAgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHBAAAgMAAwEAAAAAAAAAAAAAAQIAAxEEBRIh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEVH/2gAMAwEAAhEDEQA/AJpdihCozEv6AzNETPxrbH7Pj+rGbGAGnfkRFgrP/9k="
             />
           </div>
           {/* Dark overlay */}

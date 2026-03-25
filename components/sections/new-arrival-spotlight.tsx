@@ -48,13 +48,15 @@ export function NewArrivalSpotlight() {
 
                   <div className="absolute inset-[2px] rounded-2xl overflow-hidden bg-[#0A0A0A]">
                     <Image
-                      src="/images/products-hd/mesa-serpentina.jpg"
+                      src="/images/products-hd/mesa-serpentina.webp"
                       alt="Mesa Serpentina — Novidade Let'Rent 2026"
                       fill
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
                       priority
-                      quality={90}
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAAAAAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAKAAcDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGRAAAwADAAAAAAAAAAAAAAAAAAECERJx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDQzVKntngKAo//2Q=="
                     />
 
                     {/* Vignette */}

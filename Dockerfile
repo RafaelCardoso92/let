@@ -29,6 +29,9 @@ WORKDIR /app
 # Set environment to production
 ENV NODE_ENV=production
 
+# Install sharp dependencies for image optimization
+RUN apk add --no-cache vips-dev
+
 # Copy necessary files from builder
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next

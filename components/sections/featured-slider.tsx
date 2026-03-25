@@ -19,7 +19,7 @@ const featuredProducts: FeaturedProduct[] = [
     id: 0,
     name: "Mesa Serpentina",
     description: "O nosso novo modelo em serpentina — design sinuoso e versátil que será tendência em 2026.",
-    image: "/images/products-hd/mesa-serpentina.jpg",
+    image: "/images/products-hd/mesa-serpentina.webp",
     category: "Novidade",
   },
   {
