@@ -16,6 +16,13 @@ interface FeaturedProduct {
 
 const featuredProducts: FeaturedProduct[] = [
   {
+    id: 0,
+    name: "Mesa Serpentina",
+    description: "O nosso novo modelo em serpentina — design sinuoso e versátil que será tendência em 2026.",
+    image: "/images/products-hd/mesa-serpentina.jpg",
+    category: "Novidade",
+  },
+  {
     id: 1,
     name: "Mesa Rústica",
     description: "Mesas de madeira rústica que combinam charme tradicional com elegância contemporânea.",

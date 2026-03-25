@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { NewArrivalSpotlight } from "@/components/sections/new-arrival-spotlight";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { FeaturedSlider } from "@/components/sections/featured-slider";
 import { CTASection } from "@/components/sections/cta-section";
@@ -13,6 +14,8 @@ export default function Home() {
         ctaHref="/servicos"
         backgroundImage="/images/hero/hero-2.jpg"
       />
+
+      <NewArrivalSpotlight />
 
       <FeaturedSlider />
 
