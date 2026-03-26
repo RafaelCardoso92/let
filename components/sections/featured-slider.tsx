@@ -138,6 +138,7 @@ export function FeaturedSlider() {
                 
                 <div className="absolute inset-[1px] rounded-2xl overflow-hidden bg-black">
                   <Image
+                    key={currentProduct.id}
                     src={currentProduct.image}
                     alt={currentProduct.name}
                     fill

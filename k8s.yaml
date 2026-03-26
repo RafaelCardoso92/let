@@ -1,0 +1,107 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: let
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: let
+  template:
+    metadata:
+      labels:
+        app: let
+    spec:
+      nodeSelector:
+        environment: production
+      containers:
+        - name: let
+          image: 100.122.64.82:5000/let:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: NEXT_PUBLIC_SITE_URL
+              value: https://let-rent.pt
+          envFrom:
+            - secretRef:
+                name: let-secrets
+          resources:
+            requests:
+              cpu: 10m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: let
+  namespace: apps
+spec:
+  selector:
+    app: let
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: let
+  namespace: apps
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: let.rafaelcardoso.co.uk
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: let
+                port:
+                  number: 80
+    - host: let-rent.pt
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: let
+                port:
+                  number: 80
+    - host: www.let-rent.pt
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: let
+                port:
+                  number: 80
