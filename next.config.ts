@@ -69,6 +69,13 @@ const nextConfig: NextConfig = {
         destination: "https://let-rent.pt/:path*",
         permanent: true,
       },
+      // O catálogo do ano anterior: ligações antigas (Google, mensagens) levam ao actual.
+      // Temporário (307), para no próximo ano apontar ao seguinte.
+      {
+        source: "/catalogo-2025-2026.pdf",
+        destination: "/catalogo-2026-2027.pdf",
+        permanent: false,
+      },
     ];
   },
 

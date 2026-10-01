@@ -149,7 +149,7 @@ Visit:
 
 ✅ **Logo**: Located at `public/images/logos/logo.png`
 ✅ **Product Images**: 10 images in `public/images/products/`
-✅ **Catalog PDF**: Located at `public/catalogo-2025-2026.pdf` (5.1MB)
+✅ **Catalog PDF**: Located at `public/catalogo-2026-2027.pdf` (6.6MB, comprimido do original do Canva)
 
 See `ASSETS_DOWNLOADED.md` for complete details.
 

@@ -236,10 +236,10 @@ export function FeaturedSlider() {
               asChild
               className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white font-medium text-sm sm:text-base md:text-lg px-6 sm:px-10 md:px-14 py-4 sm:py-6 md:py-8 rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-300"
             >
-              <a href="/catalogo-2025-2026.pdf" download>
+              <a href="/catalogo-2026-2027.pdf" download>
                 <span className="relative z-10 flex items-center gap-4 tracking-wide">
                   <Download className="h-5 w-5" />
-                  Descarregar Catálogo 2025-2026
+                  Descarregar Catálogo 2026-2027
                 </span>
               </a>
             </Button>

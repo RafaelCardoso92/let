@@ -75,7 +75,7 @@ export function CTASection() {
               asChild
               className="group relative overflow-hidden border-2 border-accent/50 bg-accent/10 text-white hover:bg-accent hover:text-black hover:border-accent transition-all duration-500 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 rounded-full text-sm sm:text-base md:text-lg font-semibold backdrop-blur-sm hover:scale-105"
             >
-              <a href="/catalogo-2025-2026.pdf" download>
+              <a href="/catalogo-2026-2027.pdf" download>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
                 <span className="relative z-10 tracking-wide">Catálogo</span>
               </a>
