@@ -8,17 +8,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Let'Rent** (`let-rent`) — pt-PT **event-rental** business site (decor / tableware / furniture hire for weddings, parties, corporate). Quote-driven: **no Stripe checkout** — customers build a cart of rental items and submit a quote request; the team prices it via the admin dashboard.
 
-Live: `let-rent.pt` (+ `www`) and `let.rafaelcardoso.co.uk` fallback. K8s deploy name `let`, DB `let` on the **shared UK control-plane postgres** (`postgres.database.svc.cluster.local`).
+Live: `let-rent.pt` (+ `www`) and `let.rafaelcardoso.co.uk` fallback. K8s deploy name `let` on Germany (`role: production-eu`). DB `let` on its **own** Postgres pod `postgres-let` (ns `apps`, Germany, **no standby**), backed up daily by `~/backup-databases.sh`.
+
+**Two copies of this repo, both git, no shared remote: `~/let` and `~/projects/let`.** Bare `ops deploy let` builds **`~/projects/let`** (`find_source_dir`), and `ops deploy` builds the working tree. Change one and forget the other = old code ships. Deploy explicitly: `ops deploy let /home/ubuntu/let`, then sync the other copy (`git -C ~/projects/let pull --ff-only ~/let main`).
 
 ## Commands
 
 ```bash
 npm run dev        # Next 16 dev server, turbopack (localhost:3000)
 npm run build      # prisma generate && next build  — generate runs first, don't skip
-npm run lint       # eslint (next lint)
+npm run lint       # BROKEN: `next lint` was removed in Next 16 and the repo has no eslint config
 npm run db:push    # prisma db push (no migrations dir — schema pushed directly)
 npm run db:studio  # prisma studio
-ops deploy let     # build + push + deploy to prod (from ~/)
+ops deploy let /home/ubuntu/let   # build + push + deploy to prod (path required, see above)
 ```
 
 No test suite. `prisma generate` is part of `build` — a bare `next build` fails on a stale client.
@@ -46,7 +48,9 @@ When adding a feature, decide which store owns the data: **catalogue/content →
 
 ## Deploy gotchas
 
-- **`k8s.yaml` nodeSelector is `environment: production` — NON-STANDARD.** The documented cluster labels are `role: demo|production|production-eu`. Verify this still schedules (`ops status let`) before trusting a deploy; if it's pending-unschedulable, the selector is the cause.
+- **`k8s.yaml` is stale — never `kubectl apply` it.** `ops deploy` does not apply it (it only builds, pushes and pins the digest on the live Deployment). The live spec has `nodeSelector: role: production-eu` and a Germany-registry digest; the file still says `environment: production` (that label is on the **control-plane**, so applying it moves the app there) and `:latest` (drops digest pinning). Its `Ingress let` does not exist in the cluster: public hosts are routed by the Cloudflare tunnel dashboard. The `letrent` route in `~/infrastructure/traefik/config/config.yaml` (→ `let:3000`) is a dead Docker-era leftover.
+- **DR:** `let-standby` (UK, replicas 0) via `~/dr/failover-de.sh let`. That script treats `let` as stateless (`APPDB[let]=""`), but `postgres-let` lives on Germany with no standby, so after a Germany loss the site renders (Sanity) while quotes, stock and `/admin` fail.
+- **Catalogue** = `public/catalogo-2026-2027.pdf`, linked from `components/sections/cta-section.tsx` and `featured-slider.tsx` (button text there too). `next.config.ts` 307-redirects last year's filename to the current one; on a new year, update all three. Compress Canva exports with `gs -dPDFSETTINGS=/ebook` (37 MB → 6.6 MB).
 - Secrets come from `let-secrets` (`envFrom`): `DATABASE_URL`, `JWT_SECRET`, `NEXT_PUBLIC_SANITY_*`.
 - Dockerfile is plain `node:20-alpine` multi-stage (no standalone output) — `prisma generate` runs in the build stage.
 - `docker-compose.yml` exists but is the **old** Traefik-label deploy path — prod is K8s via `ops deploy`. Ignore compose unless explicitly doing local Docker.

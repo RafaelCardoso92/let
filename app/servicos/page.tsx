@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Package, Truck, Wrench, CheckCircle } from "lucide-react";
 import { CTASection } from "@/components/sections/cta-section";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
 const services = [
   {
     icon: Package,
+    image: "/images/services/aluguer-material.webp",
     title: "Aluguer de Material",
     description:
       "Uma coleção premium de equipamentos de catering, desde porcelana fina e talheres de prata até mobiliário de design exclusivo.",
@@ -57,6 +59,7 @@ const services = [
   },
   {
     icon: Truck,
+    image: "/images/services/transporte.webp",
     title: "Transporte Dedicado",
     description:
       "Serviço de transporte especializado com equipa profissional, garantindo que cada peça chega em perfeitas condições.",
@@ -71,6 +74,7 @@ const services = [
   },
   {
     icon: Wrench,
+    image: "/images/services/montagem.webp",
     title: "Montagem Profissional",
     description:
       "Instalação meticulosa por especialistas que transformam o seu espaço numa experiência memorável e sofisticada.",
@@ -93,7 +97,7 @@ export default function ServicesPage() {
         subtitle="Soluções completas para tornar o seu evento perfeito. Da escolha do material à montagem final, estamos consigo em cada passo."
         ctaText="Solicitar Orçamento"
         ctaHref="/contactos"
-        backgroundImage="/images/hero/hero-1.jpg"
+        backgroundImage="/images/hero/servicos.webp"
       />
 
       <section className="py-28 md:py-40">
@@ -120,7 +124,7 @@ export default function ServicesPage() {
               return (
                 <Card
                   key={index}
-                  className="overflow-hidden border-0 shadow-premium hover:shadow-premium-hover transition-all duration-500"
+                  className="group overflow-hidden border-0 shadow-premium hover:shadow-premium-hover transition-all duration-500"
                 >
                   <CardContent className="p-0">
                     <div className="grid md:grid-cols-2 gap-0">
@@ -129,15 +133,20 @@ export default function ServicesPage() {
                           index % 2 === 0
                             ? "bg-primary/5"
                             : "bg-accent/5"
-                        } flex flex-col justify-center`}
+                        } flex flex-col justify-center relative overflow-hidden`}
                       >
-                        <div className="mb-8 inline-flex p-5 bg-white rounded-2xl shadow-lg w-fit">
+                        {/* Photo revealed on hover */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                          <Image src={service.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                          <div className="absolute inset-0 bg-black/60" />
+                        </div>
+                        <div className="mb-8 inline-flex p-5 bg-white rounded-2xl shadow-lg w-fit relative">
                           <Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold mb-5 font-serif">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-5 font-serif relative group-hover:text-white transition-colors duration-500">
                           {service.title}
                         </h3>
-                        <p className="text-muted-foreground text-lg font-light leading-relaxed">
+                        <p className="text-muted-foreground text-lg font-light leading-relaxed relative group-hover:text-white/85 transition-colors duration-500">
                           {service.description}
                         </p>
                       </div>

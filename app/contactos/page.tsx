@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ContactForm } from "@/components/sections/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MessageCircle, Facebook, Instagram } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -92,6 +92,24 @@ export default function ContactPage() {
 
                     {}
                     <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                          <MessageCircle className="h-5 w-5 text-primary" />
+                        </div>
+                        <h3 className="font-semibold">WhatsApp</h3>
+                      </div>
+                      <a
+                        href="https://wa.me/351936890024"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors pl-11"
+                      >
+                        936 890 024
+                      </a>
+                    </div>
+
+                    {}
+                    <div>
                       <h3 className="font-semibold mb-4">Redes Sociais</h3>
                       <div className="flex gap-4 pl-11">
                         <a
@@ -120,11 +138,7 @@ export default function ContactPage() {
                 <CardContent className="pt-6">
                   <h3 className="font-semibold mb-2">Horário de Atendimento</h3>
                   <p className="text-sm text-muted-foreground">
-                    Segunda a Sexta: 9h00 - 18h00
-                    <br />
-                    Sábado: 9h00 - 13h00
-                    <br />
-                    Domingo: Encerrado
+                    Todos os dias: 9h00 - 20h00
                   </p>
                 </CardContent>
               </Card>

@@ -17,59 +17,59 @@ interface FeaturedProduct {
 const featuredProducts: FeaturedProduct[] = [
   {
     id: 0,
-    name: "Mesa Serpentina",
-    description: "O nosso novo modelo em serpentina — design sinuoso e versátil que será tendência em 2026.",
-    image: "/images/products-hd/mesa-serpentina.webp",
-    category: "Novidade",
+    name: "Mesa Rústica",
+    description: "Mesas de madeira rústica que combinam charme tradicional com elegância contemporânea.",
+    image: "/images/products-hd/mesa-rustica-2026.webp",
+    category: "Mobiliário",
   },
   {
     id: 1,
-    name: "Mesa Rústica",
-    description: "Mesas de madeira rústica que combinam charme tradicional com elegância contemporânea.",
-    image: "/images/products-hd/mesa-rustica.webp",
+    name: "Cadeira Tiffany Decapé",
+    description: "Em madeira clara, traz elegância e um estilo atemporal para qualquer evento.",
+    image: "/images/products-hd/cadeira-tiffany-decape-2026.webp",
     category: "Mobiliário",
   },
   {
     id: 2,
-    name: "Mesa Alta Cocktail",
-    description: "Ideal para zonas de receção, convívio e cocktails com um ambiente sofisticado.",
-    image: "/images/products-hd/mesa-alta-cocktail.jpg",
+    name: "Cadeira Ferro Preta",
+    description: "Linhas elegantes em ferro preto, um clássico que se adapta a qualquer ambiente.",
+    image: "/images/products-hd/cadeira-ferro-preta.webp",
     category: "Mobiliário",
   },
   {
     id: 3,
-    name: "Cadeira Tiffany Decapé",
-    description: "Em madeira clara, traz elegância e um estilo atemporal para qualquer evento.",
-    image: "/images/products-hd/cadeira-tiffany-decape.webp",
-    category: "Mobiliário",
+    name: "Sofá Veludo Azul",
+    description: "Veludo azul suave e madeira trabalhada, para zonas lounge cheias de charme.",
+    image: "/images/products-hd/sofa-veludo-azul.webp",
+    category: "Lounge",
   },
   {
     id: 4,
-    name: "Prato Marcador Dourado",
-    description: "Eleva qualquer serviço de mesa para a excelência com o requinte do dourado.",
-    image: "/images/products-hd/prato-marcador-dourado.jpg",
-    category: "Mesa",
+    name: "Sofá Bamboo",
+    description: "Natural e descontraído, perfeito para eventos ao ar livre e ambientes boho.",
+    image: "/images/products-hd/sofa-bamboo.webp",
+    category: "Lounge",
   },
   {
     id: 5,
-    name: "Prato Marcador Ratan",
-    description: "Um marcador que traz textura, charme e um toque acolhedor à decoração da mesa.",
-    image: "/images/products-hd/prato-marcador-ratan.jpg",
-    category: "Mesa",
+    name: "Sofá Veludo Bege",
+    description: "Um toque clássico e acolhedor que dá conforto e sofisticação a qualquer espaço.",
+    image: "/images/products-hd/sofa-veludo-bege.webp",
+    category: "Lounge",
   },
   {
     id: 6,
-    name: "Copos Bico",
-    description: "Em vidro texturizado e tons variados, acrescentam personalidade e um toque distintivo à mesa.",
-    image: "/images/products-hd/copos-bico.jpg",
+    name: "Copo Vinho Dourado",
+    description: "Cristal fino com aro dourado, para brindar com requinte.",
+    image: "/images/products-hd/copo-vinho-dourado.webp",
     category: "Cristalaria",
   },
   {
     id: 7,
-    name: "Bancada Refrigerada Bar",
-    description: "Garantindo frescura e praticidade em qualquer evento.",
-    image: "/images/products-hd/bancada-refrigerada-bar.jpg",
-    category: "Bar",
+    name: "Prato Sublima Dourado",
+    description: "Porcelana branca com aro dourado que eleva qualquer mesa.",
+    image: "/images/products-hd/prato-sublima-dourado.webp",
+    category: "Mesa",
   },
 ];
 
@@ -244,7 +244,7 @@ export function FeaturedSlider() {
               </a>
             </Button>
             <p className="text-white/30 mt-4 text-xs tracking-wide">
-              PDF • Lista completa com preços
+              PDF
             </p>
           </div>
         </AnimateOnScroll>
