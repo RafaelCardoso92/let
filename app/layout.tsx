@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { CookieConsent } from "@/components/cookie-consent";
@@ -10,21 +10,21 @@ import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { StructuredData } from "@/components/structured-data";
 import { ScrollToTop } from "@/components/scroll-to-top";
-import { MouseGradient } from "@/components/ui/mouse-gradient";
 
 // Optimized font loading with Next.js
-const playfair = Playfair_Display({
+const display = Cormorant_Garamond({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-display",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const body = Jost({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
+  weight: ["300", "400", "500"],
 });
 
 export const viewport: Viewport = {
@@ -32,10 +32,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
+  themeColor: "#F7F2E9",
 };
 
 export const metadata: Metadata = {
@@ -133,7 +130,7 @@ export default function RootLayout({
   return (
     <html 
       lang="pt" 
-      className={`${playfair.variable} ${inter.variable}`}
+      className={`${display.variable} ${body.variable}`}
     >
       <head>
         <StructuredData />
@@ -148,8 +145,7 @@ export default function RootLayout({
         {/* Manifest for PWA */}
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
-        <MouseGradient />
+      <body className={`${body.className} antialiased flex flex-col min-h-screen`}>
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

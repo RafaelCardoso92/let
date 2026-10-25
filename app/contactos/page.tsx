@@ -29,7 +29,8 @@ export default function ContactPage() {
       <Hero
         title="Contacte-nos"
         subtitle="Tem alguma questão ou pretende solicitar um orçamento? Estamos aqui para ajudar a tornar o seu evento perfeito."
-        backgroundImage="/images/hero/hero-2.jpg"
+        backgroundImage="/images/services/transporte.webp"
+        backgroundAlt="Carrinha da Let'Rent a chegar ao local de um evento"
       />
 
       <section className="py-16 md:py-24">
@@ -38,7 +39,7 @@ export default function ContactPage() {
             {}
             <div className="md:col-span-2 space-y-6">
               <div>
-                <h2 className="text-2xl font-bold mb-6">
+                <h2 className="font-serif text-4xl mb-6">
                   Informações de Contacto
                 </h2>
                 <p className="text-muted-foreground mb-8">
@@ -146,7 +147,7 @@ export default function ContactPage() {
 
             {}
             <div className="md:col-span-3">
-              <h2 className="text-2xl font-bold mb-6">Envie-nos uma Mensagem</h2>
+              <h2 className="font-serif text-4xl mb-6">Envie-nos uma mensagem</h2>
               <ContactForm />
             </div>
           </div>

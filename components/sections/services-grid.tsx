@@ -1,9 +1,7 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Package, Truck, Wrench, LucideIcon } from "lucide-react";
-import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 interface Service {
   title: string;
@@ -41,67 +39,36 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ServicesGrid({ services = defaultServices }) {
   return (
-    <section className="py-28 md:py-40 relative overflow-hidden bg-[#FAFAFA]">
-      {/* Subtle grain texture */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 200 200%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E')]" />
+    <section className="py-24 md:py-32 bg-card border-y border-border">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4">Os nossos serviços</h2>
+          <p className="text-lg text-muted-foreground font-light">Da escolha das peças à montagem final</p>
+        </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <AnimateOnScroll animation="fade-up" className="text-center mb-24">
-          {/* Premium gold divider */}
-          <div className="flex items-center justify-center mb-10">
-            <div className="h-px w-24 bg-gradient-to-r from-transparent to-accent/50" />
-            <div className="mx-6 flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-accent/40" />
-              <div className="h-1.5 w-1.5 rounded-full bg-accent" />
-              <div className="h-1 w-1 rounded-full bg-accent/40" />
-            </div>
-            <div className="h-px w-24 bg-gradient-to-l from-transparent to-accent/50" />
-          </div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground tracking-tight font-serif">
-            Os Nossos <span className="text-primary">Serviços</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
-            Excelência em cada detalhe do seu evento
-          </p>
-        </AnimateOnScroll>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-          {services.map((service, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service) => {
             const Icon = iconMap[service.icon] || Package;
             return (
-              <AnimateOnScroll key={index} animation="fade-up" delay={index * 200}>
-                <Card className="group bg-white border-0 shadow-premium hover:shadow-premium-hover transition-all duration-700 hover:-translate-y-4 h-full relative overflow-hidden">
-                  {/* Subtle top gold line */}
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+              <div key={service.title} className="group relative overflow-hidden rounded-sm border border-border bg-background md:min-h-[22rem]">
+                {/* Photo revealed on hover */}
+                {service.image && (
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <Image src={service.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/20" />
+                  </div>
+                )}
 
-                  {/* Photo revealed on hover */}
-                  {service.image && (
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                      <Image src={service.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                      <div className="absolute inset-0 bg-black/60" />
-                    </div>
-                  )}
-                  
-                  <CardContent className="p-10 md:p-12 relative">
-                    {/* Icon with premium styling */}
-                    <div className="mb-8 inline-flex p-6 bg-primary/5 rounded-2xl group-hover:bg-white/15 transition-all duration-500 relative">
-                      <Icon className="h-10 w-10 text-primary group-hover:text-white transition-colors duration-500 relative z-10" strokeWidth={1.5} />
-                    </div>
-                    
-                    <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-white transition-colors duration-500 font-serif tracking-tight">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-foreground/60 group-hover:text-white/85 transition-colors duration-500 leading-relaxed text-lg font-light">
-                      {service.description}
-                    </p>
-
-                    {/* Bottom gold accent on hover */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-24 h-0.5 bg-accent transition-all duration-500" />
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
+                <div className="relative h-full p-8 md:p-10 flex flex-col">
+                  <Icon className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-500" strokeWidth={1.25} />
+                  <h3 className="font-serif text-3xl mt-14 mb-4 group-hover:text-white transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground font-light group-hover:text-white/90 transition-colors duration-500">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             );
           })}
         </div>

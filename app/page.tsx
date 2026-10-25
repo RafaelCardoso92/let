@@ -8,11 +8,12 @@ export default function Home() {
   return (
     <>
       <Hero
-        title="Let'Rent - Aluguer de Material para Eventos"
+        title={<>Aluguer de material para eventos, <em>pensado ao pormenor</em></>}
         subtitle="Oferecemos uma ampla variedade de equipamentos de catering, mobiliário e serviços completos para tornar o seu evento inesquecível."
-        ctaText="Descubra os nossos serviços"
+        ctaText="Ver os nossos serviços"
         ctaHref="/servicos"
         backgroundImage="/images/hero/hero-2.jpg"
+        backgroundAlt="Cadeiras Tiffany empilhadas no armazém da Let'Rent"
       />
 
       <NewArrivalSpotlight />

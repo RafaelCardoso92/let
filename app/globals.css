@@ -4,24 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
-    --primary: 158 40% 45%;
+    --background: 39 47% 94%;
+    --foreground: 40 11% 16%;
+    --card: 43 100% 99%;
+    --card-foreground: 40 11% 16%;
+    --popover: 43 100% 99%;
+    --popover-foreground: 40 11% 16%;
+    --primary: 158 40% 34%;
     --primary-foreground: 0 0% 100%;
     --secondary: 41 45% 50%;
     --secondary-foreground: 0 0% 100%;
     --accent: 41 48% 58%;
-    --accent-foreground: 0 0% 5%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 35%;
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 158 40% 45%;
-    --radius: 0.5rem;
+    --accent-foreground: 40 11% 16%;
+    --accent-ink: 38 50% 37%;
+    --muted: 40 40% 90%;
+    --muted-foreground: 40 10% 38%;
+    --border: 38 35% 83%;
+    --input: 38 35% 83%;
+    --ring: 158 40% 34%;
+    --radius: 0.25rem;
   }
 }
 
@@ -43,9 +44,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     line-height: 1.1;
+  }
+
+  h1 em, h2 em {
+    font-style: italic;
+    color: hsl(var(--primary));
   }
 
   p {
@@ -63,26 +69,30 @@
   }
 
   .font-serif {
-    font-family: var(--font-playfair), ui-serif, serif;
+    font-family: var(--font-display), ui-serif, serif;
   }
 
   .font-sans {
-    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
-  /* Premium shadows - optimized */
+  /* Photo framed like a print on an invitation: white mount + hairline */
+  .frame {
+    border: 6px solid hsl(var(--card));
+    box-shadow: 0 0 0 1px hsl(var(--border));
+  }
+
+  /* Arched top; radii clamp to half the width */
+  .arch {
+    border-radius: 9999px 9999px 4px 4px;
+  }
+
   .shadow-premium {
-    box-shadow: 
-      0 4px 6px -1px rgba(0,0,0,0.05),
-      0 10px 15px -3px rgba(0,0,0,0.05),
-      0 20px 25px -5px rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 1px hsl(var(--border)), 0 18px 40px -28px rgba(46, 43, 37, 0.35);
   }
 
   .shadow-premium-hover {
-    box-shadow: 
-      0 10px 15px -3px rgba(0,0,0,0.07),
-      0 20px 25px -5px rgba(0,0,0,0.07),
-      0 25px 50px -12px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 1px hsl(var(--accent) / 0.6), 0 22px 44px -26px rgba(46, 43, 37, 0.4);
   }
 }
 

@@ -98,17 +98,13 @@ export default function ServicesPage() {
         ctaText="Solicitar Orçamento"
         ctaHref="/contactos"
         backgroundImage="/images/hero/servicos.webp"
+        backgroundAlt="Mesa posta com copos de cristal e talheres dourados"
       />
 
-      <section className="py-28 md:py-40">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <div className="flex items-center justify-center mb-8">
-              <div className="h-px w-16 bg-accent/50" />
-              <div className="mx-4 h-1.5 w-1.5 rounded-full bg-accent" />
-              <div className="h-px w-16 bg-accent/50" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-serif">
               Excelência em cada detalhe
             </h2>
             <p className="text-xl text-muted-foreground font-light">
@@ -124,7 +120,7 @@ export default function ServicesPage() {
               return (
                 <Card
                   key={index}
-                  className="group overflow-hidden border-0 shadow-premium hover:shadow-premium-hover transition-all duration-500"
+                  className="group overflow-hidden border-0 rounded-sm shadow-premium hover:shadow-premium-hover transition-shadow duration-500"
                 >
                   <CardContent className="p-0">
                     <div className="grid md:grid-cols-2 gap-0">
@@ -140,10 +136,10 @@ export default function ServicesPage() {
                           <Image src={service.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                           <div className="absolute inset-0 bg-black/60" />
                         </div>
-                        <div className="mb-8 inline-flex p-5 bg-white rounded-2xl shadow-lg w-fit relative">
-                          <Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
+                        <div className="mb-8 inline-flex p-4 bg-card rounded-full border border-border w-fit relative">
+                          <Icon className="h-7 w-7 text-primary" strokeWidth={1.25} />
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold mb-5 font-serif relative group-hover:text-white transition-colors duration-500">
+                        <h3 className="text-3xl md:text-4xl mb-5 font-serif relative group-hover:text-white transition-colors duration-500">
                           {service.title}
                         </h3>
                         <p className="text-muted-foreground text-lg font-light leading-relaxed relative group-hover:text-white/85 transition-colors duration-500">
@@ -151,8 +147,8 @@ export default function ServicesPage() {
                         </p>
                       </div>
 
-                      <div className="p-10 md:p-14 bg-white flex flex-col justify-center">
-                        <h4 className="font-semibold text-lg mb-8 text-primary">
+                      <div className="p-10 md:p-14 bg-card flex flex-col justify-center">
+                        <h4 className="font-serif italic text-2xl mb-8 text-accent-ink">
                           O que está incluído:
                         </h4>
                         <ul className="space-y-5">
