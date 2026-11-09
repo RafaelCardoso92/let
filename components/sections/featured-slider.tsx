@@ -32,7 +32,7 @@ const featuredProducts: FeaturedProduct[] = [
     id: 2,
     name: "Cadeira Ferro Preta",
     description: "Linhas elegantes em ferro preto, um clássico que se adapta a qualquer ambiente.",
-    image: "/images/products-hd/cadeira-ferro-preta.webp",
+    image: "/images/products-hd/cadeira-ferro-preta-2026.webp",
     category: "Mobiliário",
   },
   {
