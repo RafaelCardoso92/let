@@ -9,3 +9,5 @@ dist/
 build/
 .turbo/
 coverage/
+.claude/worktrees/
+tsconfig.tsbuildinfo
